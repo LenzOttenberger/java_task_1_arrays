@@ -1,5 +1,6 @@
 package org.kiryl.arrays.io.impl;
 
+import org.kiryl.arrays.exception.FileReadingException;
 import org.kiryl.arrays.io.DataReader;
 
 import java.io.IOException;
@@ -12,7 +13,7 @@ public class FileDataReader implements DataReader {
   @Override
   public List<String> readData(String filePath) {
     if (filePath == null || filePath.isBlank()) {
-      throw new IllegalArgumentException("String cannot be empty or null!");
+      throw new IllegalArgumentException("filePath cannot be null or blank.");
     }
 
     Path path = Paths.get(filePath);
@@ -20,8 +21,7 @@ public class FileDataReader implements DataReader {
     try {
       return Files.readAllLines(path);
     } catch (IOException e) {
-      // add custom exception for THIS CASE
-      return null; // fix this and replace with EXCEPTION
+      throw new FileReadingException("Error occurred while read file: " + filePath, e);
     }
   }
 }

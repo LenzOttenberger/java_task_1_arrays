@@ -8,32 +8,35 @@ import java.util.List;
 
 public class ArrayWrapperFactory {
   public ArrayWrapper<?> createWrapper(List<Number> numbers) {
-    if (numbers == null || numbers.isEmpty())
-      throw new IllegalArgumentException("Number list cannot be null or empty");
+    if (numbers == null) {
+      throw new IllegalArgumentException("Number list cannot be null!");
+    }
 
-    boolean allInteger = true;
+    if (numbers.isEmpty()) {
+      return new IntegerArrayWrapper(new Integer[0]);
+    }
+
+    boolean hasFractionalPart = false;
     for (Number number : numbers) {
-      if (number instanceof Double) {
-        Double doubleValue = (Double) number;
-        if (doubleValue % 1 != 0) {
-          allInteger = false;
-          break;
-        }
+      // Mathematically check if the number has a fractional part
+      if (number.doubleValue() % 1 != 0) {
+        hasFractionalPart = true;
+        break;
       }
     }
 
-    if (allInteger) {
-      Integer[] intArray = new Integer[numbers.size()];
-      for (int i = 0; i < numbers.size(); i++) {
-        intArray[i] = numbers.get(i).intValue();
-      }
-      return new IntegerArrayWrapper(intArray);
-    } else {
+    if (hasFractionalPart) {
       Double[] doubleArray = new Double[numbers.size()];
       for (int i = 0; i < numbers.size(); i++) {
         doubleArray[i] = numbers.get(i).doubleValue();
       }
       return new DoubleArrayWrapper(doubleArray);
+    } else {
+      Integer[] intArray = new Integer[numbers.size()];
+      for (int i = 0; i < numbers.size(); i++) {
+        intArray[i] = numbers.get(i).intValue();
+      }
+      return new IntegerArrayWrapper(intArray);
     }
   }
 }
