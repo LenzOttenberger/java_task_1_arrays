@@ -1,0 +1,46 @@
+2026-07-06 15:36:08.234 [main] INFO  org.kiryl.arrays.app.Application - Application started
+2026-07-06 15:36:08.243 [main] INFO  org.kiryl.arrays.app.Application - Components initialized successfully
+2026-07-06 15:36:08.252 [main] INFO  org.kiryl.arrays.io.impl.FileDataReader - Attempting to read file: data/input.txt
+2026-07-06 15:36:08.253 [main] INFO  org.kiryl.arrays.io.impl.FileDataReader - Successfully read 6 lines from file
+2026-07-06 15:36:08.253 [main] INFO  org.kiryl.arrays.app.Application - Read 6 lines from file
+2026-07-06 15:36:08.254 [main] WARN  org.kiryl.arrays.validator.impl.DataValidation - Line is invalid: 1y1 21 32
+2026-07-06 15:36:08.254 [main] INFO  org.kiryl.arrays.validator.impl.DataValidation - Filtered 5 valid lines from 6
+2026-07-06 15:36:08.254 [main] INFO  org.kiryl.arrays.app.Application - Filtered 5 valid lines from 6
+2026-07-06 15:36:08.255 [main] INFO  org.kiryl.arrays.app.Application - --- Starting Array Processing ---
+2026-07-06 15:36:08.255 [main] INFO  org.kiryl.arrays.app.Application - Processing array of size: 3
+2026-07-06 15:36:08.255 [main] INFO  org.kiryl.arrays.app.Application - Min: 1
+2026-07-06 15:36:08.255 [main] INFO  org.kiryl.arrays.app.Application - Max: 3
+2026-07-06 15:36:08.255 [main] INFO  org.kiryl.arrays.app.Application - Sum: 6.0
+2026-07-06 15:36:08.256 [main] INFO  org.kiryl.arrays.app.Application - Average: 2.0
+2026-07-06 15:36:08.256 [main] INFO  org.kiryl.arrays.app.Application - Bubble Sort: [1, 2, 3]
+2026-07-06 15:36:08.256 [main] INFO  org.kiryl.arrays.app.Application - Quick Sort: [1, 2, 3]
+2026-07-06 15:36:08.256 [main] INFO  org.kiryl.arrays.app.Application - Processing array of size: 3
+2026-07-06 15:36:08.256 [main] INFO  org.kiryl.arrays.app.Application - Min: 1
+2026-07-06 15:36:08.256 [main] INFO  org.kiryl.arrays.app.Application - Max: 3
+2026-07-06 15:36:08.256 [main] INFO  org.kiryl.arrays.app.Application - Sum: 6.0
+2026-07-06 15:36:08.257 [main] INFO  org.kiryl.arrays.app.Application - Average: 2.0
+2026-07-06 15:36:08.257 [main] INFO  org.kiryl.arrays.app.Application - Bubble Sort: [1, 2, 3]
+2026-07-06 15:36:08.257 [main] INFO  org.kiryl.arrays.app.Application - Quick Sort: [1, 2, 3]
+2026-07-06 15:36:08.257 [main] INFO  org.kiryl.arrays.app.Application - Processing array of size: 3
+2026-07-06 15:36:08.257 [main] INFO  org.kiryl.arrays.app.Application - Min: 1.5
+2026-07-06 15:36:08.257 [main] INFO  org.kiryl.arrays.app.Application - Max: 3.5
+2026-07-06 15:36:08.257 [main] INFO  org.kiryl.arrays.app.Application - Sum: 7.5
+2026-07-06 15:36:08.258 [main] INFO  org.kiryl.arrays.app.Application - Average: 2.5
+2026-07-06 15:36:08.258 [main] INFO  org.kiryl.arrays.app.Application - Bubble Sort: [1.5, 2.5, 3.5]
+2026-07-06 15:36:08.258 [main] INFO  org.kiryl.arrays.app.Application - Quick Sort: [1.5, 2.5, 3.5]
+2026-07-06 15:36:08.258 [main] INFO  org.kiryl.arrays.app.Application - Processing array of size: 0
+2026-07-06 15:36:08.258 [main] WARN  org.kiryl.arrays.app.Application - Min: N/A (empty array)
+2026-07-06 15:36:08.258 [main] WARN  org.kiryl.arrays.app.Application - Max: N/A (empty array)
+2026-07-06 15:36:08.258 [main] WARN  org.kiryl.arrays.app.Application - Sum: N/A (empty array)
+2026-07-06 15:36:08.258 [main] WARN  org.kiryl.arrays.app.Application - Average: N/A (empty array)
+2026-07-06 15:36:08.258 [main] INFO  org.kiryl.arrays.app.Application - Bubble Sort: []
+2026-07-06 15:36:08.258 [main] INFO  org.kiryl.arrays.app.Application - Quick Sort: []
+2026-07-06 15:36:08.259 [main] INFO  org.kiryl.arrays.app.Application - Processing array of size: 5
+2026-07-06 15:36:08.259 [main] INFO  org.kiryl.arrays.app.Application - Min: 10
+2026-07-06 15:36:08.259 [main] INFO  org.kiryl.arrays.app.Application - Max: 50
+2026-07-06 15:36:08.259 [main] INFO  org.kiryl.arrays.app.Application - Sum: 150.0
+2026-07-06 15:36:08.259 [main] INFO  org.kiryl.arrays.app.Application - Average: 30.0
+2026-07-06 15:36:08.259 [main] INFO  org.kiryl.arrays.app.Application - Bubble Sort: [10, 20, 30, 40, 50]
+2026-07-06 15:36:08.259 [main] INFO  org.kiryl.arrays.app.Application - Quick Sort: [10, 20, 30, 40, 50]
+2026-07-06 15:36:08.260 [main] INFO  org.kiryl.arrays.app.Application - --- Processing Finished ---
+2026-07-06 15:36:08.260 [main] INFO  org.kiryl.arrays.app.Application - Application finished

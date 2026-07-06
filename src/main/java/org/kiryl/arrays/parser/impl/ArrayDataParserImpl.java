@@ -1,18 +1,24 @@
 package org.kiryl.arrays.parser.impl;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArrayParser implements org.kiryl.arrays.parser.ArrayParser {
+public class ArrayDataParserImpl implements org.kiryl.arrays.parser.ArrayDataParser {
+
+  private final Logger logger = LogManager.getLogger(ArrayDataParserImpl.class);
   private static final String DELIMITER_PATTERN = "[,;\\-\\s]+";
 
   @Override
   public List<Number> parse(String line) {
     if (line == null) {
-      throw new IllegalArgumentException("Line cannot be null!");
+      throw new IllegalArgumentException("Line cannot be null");
     }
 
     if (line.isBlank()) {
+      logger.debug("Parsed blank line, returning empty list");
       return new ArrayList<>();
     }
 
@@ -31,6 +37,7 @@ public class ArrayParser implements org.kiryl.arrays.parser.ArrayParser {
       }
     }
 
+    logger.debug("Parsed line into {} numbers", numbers.size());
     return numbers;
   }
 }

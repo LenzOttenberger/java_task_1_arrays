@@ -1,13 +1,16 @@
 package org.kiryl.arrays.validator.impl;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.kiryl.arrays.validator.ArrayDataValidator;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class DataValidation implements ArrayDataValidator {
-  static final String VALID_PATTERN = "^[\\d\\s,;.-]*$"; //i asked qwen and he told
-  // that the best practise is to set constants in class (QUESTION)!!!
+
+  private final Logger logger = LogManager.getLogger(DataValidation.class);
+  private static final String VALID_PATTERN = "^[\\d\\s,;.-]*$";
 
   @Override
   public boolean isValid(String line) {
@@ -17,13 +20,17 @@ public class DataValidation implements ArrayDataValidator {
     if (line.isBlank()) {
       return true;
     }
-    return line.matches(VALID_PATTERN);
+    boolean result = line.matches(VALID_PATTERN);
+    if (!result) {
+      logger.warn("Line is invalid: {}", line);
+    }
+    return result;
   }
 
   @Override
   public List<String> filterValidLines(List<String> lines) {
     if (lines == null) {
-      throw new IllegalArgumentException("Lines list cannot be empty!");
+      throw new IllegalArgumentException("Lines list cannot be null");
     }
 
     List<String> validLines = new ArrayList<>();
@@ -33,6 +40,7 @@ public class DataValidation implements ArrayDataValidator {
       }
     }
 
+    logger.info("Filtered {} valid lines from {}", validLines.size(), lines.size());
     return validLines;
   }
 }
