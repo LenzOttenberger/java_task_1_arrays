@@ -6,6 +6,11 @@ public class IntegerArrayWrapper extends ArrayWrapper<Integer> {
   }
 
   @Override
+  public ArrayWrapper<Integer> createCopy(Integer[] newElements) {
+    return new IntegerArrayWrapper(newElements);
+  }
+
+  @Override
   public Integer getElement(int index) {
     return elements[index];
   }

@@ -6,6 +6,11 @@ public class DoubleArrayWrapper extends ArrayWrapper<Double> {
   }
 
   @Override
+  public ArrayWrapper<Double> createCopy(Double[] newElements) {
+    return new DoubleArrayWrapper(newElements);
+  }
+
+  @Override
   public Double getElement(int index) {
     return elements[index];
   }
